@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ask anything to the Project G.U.R.U - your AI-powered wisdom terminal">
+  <!--CSS-->
+  <link rel="stylesheet" href="style.css">
+  <!--Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Commissioner:wght@100..900&family=Darker+Grotesque:wght@300..900&display=swap"
+    rel="stylesheet">
+  <title>Project G.U.R.U</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Project G.U.R.U</h1>
+      <h4>Generalized Universal Reasoning Unit</h4>
+    </header>
+    <main role="main">
+      <div class="chat" id="chat-window" role="log" aria-live="polite" aria-label="Chat conversation">
+        <!--Chat messages go here-->
+      </div>
+    </main>
+    <section>
+      <div class="input-area">
+        <form class="search-form" id="search-form" aria-label="Ask the Guru">
+          <input type="search" aria-label="Your question input" value="Your question here..." class="search-form-input"/>
+          <input type="submit" value="Ask" aria-label="Submit your question to the Guru" class="search-form-button"  />
+        </form>
+      </div>
+    </section>
+    
+    <footer>
+      <p class="footer-signature"> Created by <strong>Camilla C.</strong> and Powered by OpenAI. <!--<a href="https://github.com/hicamilla" target="_blank">GitHub</a>-->
+      </p>
+      <p class="status-light"> ONLINE</p>
+    </footer>
+</body>
+<script src="/index.js"></script>
+</html>
