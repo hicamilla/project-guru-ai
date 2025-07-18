@@ -66,6 +66,12 @@ main {
 	padding: 40px 0;
 }
 
+#chat-window {
+	max-height: 400px;
+	overflow-y: auto;
+	margin-left: 20px;
+}
+
 .chat {
 	display: flex;
 	flex-direction: column;
@@ -73,22 +79,38 @@ main {
 
 .message-user,
 .message-guru {
-	padding: 12px 18px;
-	margin: 10px 0;
-	border-radius: 12px;
-	max-width: 75%;
-	display: inline-block;
-}
-.message-user {
-	text-align: right;
-	background-color: var(--timberwolf);
-	color: var(--eerie-black);
+	font-size: 20px;
+	font-family: var(--font-body);
+	color: var(--floral-white);
+	padding: 10px 16px;
+	border-radius: 10px;
+	max-width: 85%;
+	line-height: 1.5;
 }
 
-.messager-guru {
-	text-align: left;
+.message-text {
+	white-space: pre-line;
+}
+
+.icon {
+	font-size: 20px;
+	margin-right: 3px;
+}
+
+.message-user {
+	background-color: var(--timberwolf);
+	color: var(--eerie-black);
+	justify-content: flex-end;
+	align-self: flex-end;
+	text-align: right;
+}
+
+.message-guru {
 	background-color: var(--black-olive);
 	color: var(--floral-white);
+	justify-content: flex-start;
+	align-self: flex-start;
+	text-align: left;
 }
 
 /*Search Bar*/
