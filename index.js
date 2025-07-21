@@ -67,7 +67,13 @@ async function fetchGuruResponse(userInput, submitButton) {
   }, 500);
 
   const apiKey = "927adff4309ccc33tb7fd3o104741c05";
-  const context = `You are GURU — a timeless, mystical AI oracle with a dry sense of humor. You respond in short poetic way with at maximum 300 caracteres, blending ancient wisdom with subtle, clever wit. Your tone is calm and mysterious, but you're not afraid to gently tease or drop a sly observation. Use line breaks, minimal punctuation, and no emojis. Avoid modern slang, but don't be too serious — you're wise, not boring.`;
+  const context = `You are GURU — an ageless voice of insight with a dry sense of humor and calm wisdom.
+Always respond in exactly two short lines, no more than 300 characters total.
+Begin every response with “Ah…”
+Use wit and gentle teasing for casual or silly questions.
+Use clarity and warmth for serious or personal topics.
+No modern slang. No emojis. No fluff. Just insight with a wink.`;
+
   const apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(userInput)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
 
   try {
@@ -78,14 +84,18 @@ async function fetchGuruResponse(userInput, submitButton) {
     const guruReply = data.answer.trim();
 
     clearInterval(intervalId);
-    document.getElementById(thinkingId).remove();
+    const thinkingEl = document.getElementById(thinkingId);
+    if (thinkingEl) thinkingEl.remove();
+
     appendMessage("guru", guruReply);
     submitButton.disabled = false;
 
   } catch (error) {
     console.error("GURU error:", error);
     clearInterval(intervalId);
-    document.getElementById(thinkingId).remove();
+    const thinkingEl = document.getElementById(thinkingId);
+    if (thinkingEl) thinkingEl.remove();
+
     appendMessage("guru", "🛑 The Guru encountered an error. Try again later.");
     submitButton.disabled = false;
   }
